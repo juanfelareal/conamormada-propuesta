@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta de pauta — Con Amor Mada x LA REAL</title>
+    <meta property="og:title" content="Propuesta de pauta — Con Amor Mada x LA REAL">
+    <meta property="og:description" content="Dos formas de trabajar la pauta digital de Con Amor Mada: gestión de pauta o acompañamiento.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="logo-la-real.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #F5F0EB; --ink: #14201c; --muted: #6b7280;
+            --line: rgba(13,27,42,0.1); --green: #16a34a; --navy: #0D1B2A; --card: #ffffff;
+        }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--ink); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+        .page { max-width: 860px; margin: 0 auto; padding: 64px 40px 80px; }
+
+        /* Header + título */
+        .doc-head { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 28px; border-bottom: 1px solid var(--line); margin-bottom: 44px; }
+        .doc-head img.lareal { height: 26px; filter: brightness(0); opacity: 0.9; }
+        .doc-head img.client { height: 26px; }
+        .doc-meta { font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); text-align: right; }
+        .eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--green); margin-bottom: 16px; }
+        h1 { font-size: 42px; font-weight: 900; letter-spacing: -1.8px; line-height: 1.08; margin-bottom: 18px; max-width: 740px; }
+        .lede { font-size: 18px; color: #374151; max-width: 680px; font-weight: 400; }
+
+        /* Secciones */
+        section { margin-top: 52px; }
+        h2 { font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--navy); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+        p { font-size: 16px; color: #374151; margin-bottom: 14px; }
+        p strong { color: var(--ink); font-weight: 700; }
+        em { font-style: italic; }
+        .brand { font-weight: 700; font-style: italic; }
+        .sublabel { font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin: 30px 0 14px; }
+
+        /* note (callout) */
+        .note { font-size: 14.5px; color: var(--muted); background: rgba(22,163,74,0.06); border-left: 3px solid var(--green); padding: 14px 18px; border-radius: 0 8px 8px 0; margin-top: 6px; }
+        .note strong { color: var(--green); }
+
+        /* pillars (principios/pilares) */
+        .pillars { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        .pillar { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px 26px; }
+        .pillar-n { font-size: 14px; font-weight: 800; color: var(--green); letter-spacing: 2px; margin-bottom: 12px; }
+        .pillar-t { font-size: 18px; font-weight: 800; color: var(--ink); letter-spacing: -0.4px; margin-bottom: 8px; }
+        .pillar p { font-size: 14.5px; margin: 0; color: #4b5563; line-height: 1.5; }
+
+        /* sites (opciones / dos sitios) */
+        .sites { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .site-card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 30px 28px; display: flex; flex-direction: column; }
+        .site-tag { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--green); margin-bottom: 8px; }
+        .site-name { font-size: 26px; font-weight: 900; color: var(--ink); letter-spacing: -1px; line-height: 1.05; margin-bottom: 14px; }
+        .site-desc { font-size: 14.5px; color: #4b5563; line-height: 1.55; margin-bottom: 18px; }
+        .site-desc em { color: var(--green); font-style: normal; font-weight: 600; }
+        .site-feat { list-style: none; display: grid; gap: 9px; margin-top: auto; }
+        .site-feat li { font-size: 13.5px; color: #4b5563; display: flex; gap: 10px; align-items: baseline; }
+        .site-feat li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; transform: translateY(-2px); }
+
+        /* vars (4 variables de medición) */
+        .vars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .var { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px 16px; text-align: center; }
+        .var-t { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+        .var-d { font-size: 12.5px; color: var(--muted); line-height: 1.45; }
+
+        /* KPI principal (banner) + chips */
+        .kpi-star { background: var(--navy); color: #fff; border-radius: 14px; padding: 22px 26px; display: flex; gap: 20px; align-items: center; margin-top: 6px; }
+        .kpi-star-tag { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--navy); background: var(--green); padding: 6px 13px; border-radius: 50px; white-space: nowrap; flex-shrink: 0; }
+        .kpi-star-text { font-size: 15.5px; line-height: 1.5; color: #e5e7eb; }
+        .kpi-star-text b { color: #fff; font-weight: 800; }
+        .kpi-chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .chip { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+        .chip b { display: block; font-size: 15px; font-weight: 800; color: var(--ink); letter-spacing: -0.2px; margin-bottom: 4px; }
+        .chip span { font-size: 13px; color: var(--muted); line-height: 1.4; }
+
+        /* semáforo */
+        .sem { display: grid; gap: 10px; }
+        .sem-item { display: flex; gap: 12px; align-items: baseline; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; font-size: 14.5px; color: #4b5563; }
+        .sem-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; transform: translateY(1px); }
+        .sem-item b { color: var(--ink); font-weight: 700; }
+
+        /* tabla de resultados */
+        .rtable-wrap { margin-top: 6px; border: 1px solid var(--line); border-radius: 14px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .rtable { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 660px; background: #fff; }
+        .rtable th { text-align: right; font-size: 10.5px; font-weight: 800; letter-spacing: 0.4px; text-transform: uppercase; color: var(--muted); padding: 15px 16px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+        .rtable th:first-child, .rtable td:first-child { text-align: left; }
+        .rtable td { padding: 13px 16px; border-bottom: 1px solid var(--line); color: #4b5563; text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+        .rtable tbody tr:last-child td { border-bottom: none; }
+        .rtable .ad { font-weight: 600; color: var(--ink); }
+        .rtable .ad small { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: #9ca3af; }
+        .rtable .roas { font-weight: 800; color: var(--green); }
+        .rtable tfoot td { background: var(--bg); font-weight: 800; color: var(--ink); border-top: 2px solid var(--line); border-bottom: none; }
+        .rcap { font-size: 13px; color: var(--muted); margin-top: 12px; }
+
+        /* qué incluye (UNA columna) */
+        .inc { list-style: none; display: grid; grid-template-columns: 1fr; gap: 11px; }
+        .inc li { font-size: 15px; color: #4b5563; display: flex; gap: 10px; align-items: baseline; }
+        .inc li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; transform: translateY(-2px); }
+        .inc b { color: var(--ink); font-weight: 700; }
+
+        /* plan / proceso por pasos */
+        .plan { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        .step { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px 22px; }
+        .step.first { border: 1.5px solid var(--green); }
+        .step-m { font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); margin-bottom: 8px; }
+        .step-t { font-size: 17px; font-weight: 800; color: var(--ink); margin-bottom: 12px; letter-spacing: -0.3px; }
+        .step ul { list-style: none; display: grid; gap: 8px; }
+        .step li { font-size: 13.5px; color: #4b5563; display: flex; gap: 9px; align-items: baseline; }
+        .step li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; transform: translateY(-2px); }
+        .step p { font-size: 13px; color: #4b5563; margin: 0; line-height: 1.45; }
+
+        /* garantía / método de pago (banda oscura) */
+        .guarantee { background: var(--navy); color: #fff; border-radius: 14px; padding: 24px 28px; margin-top: 16px; display: flex; gap: 18px; align-items: center; }
+        .guarantee .g-tag { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--navy); background: var(--green); padding: 6px 13px; border-radius: 50px; white-space: nowrap; flex-shrink: 0; }
+        .guarantee p { color: #e5e7eb; font-size: 15px; margin: 0; line-height: 1.5; }
+        .guarantee b { color: #fff; }
+
+        /* marquesina de clientes */
+        @keyframes mq-roll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .mq { margin-top: 22px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+        .mq-row { overflow: hidden; padding: 14px 0; }
+        .mq-row + .mq-row { border-top: 1px solid var(--line); opacity: 0.45; }
+        .mq-track { display: flex; width: max-content; font-weight: 800; font-size: clamp(26px, 4vw, 46px); letter-spacing: -0.03em; line-height: 1; color: var(--ink); animation: mq-roll 55s linear infinite; }
+        .mq-row.reverse .mq-track { animation-direction: reverse; animation-duration: 70s; }
+        .mq-item { display: inline-flex; align-items: center; }
+        .mq-item .ast { color: var(--green); margin: 0 30px; font-weight: 400; font-size: 0.5em; }
+        @media (prefers-reduced-motion: reduce) { .mq-track { animation: none; } }
+
+        /* precios */
+        .pkgs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        .pkg { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 26px 22px; position: relative; text-align: center; }
+        .pkg.recommended, .pkg.combo { border: 1.5px solid var(--green); }
+        .pkg-tag { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--green); color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 50px; white-space: nowrap; }
+        .pkg-name { font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); }
+        .pkg-sub { font-size: 13px; font-weight: 500; color: var(--muted); margin: 4px 0 14px; }
+        .pkg-price { font-size: 30px; font-weight: 900; color: var(--ink); letter-spacing: -1px; line-height: 1; }
+        .pkg-unit { font-size: 12px; color: #9ca3af; font-weight: 600; margin-top: 4px; }
+        .pkg-save { font-size: 12.5px; font-weight: 700; color: var(--green); margin-top: 10px; }
+        .pkg-aud { font-size: 12.5px; font-style: italic; color: #9ca3af; margin-top: 10px; line-height: 1.4; }
+
+        /* cierre + footer */
+        .next { margin-top: 56px; background: var(--navy); color: #fff; border-radius: 18px; padding: 40px 40px; }
+        .next h2 { color: #fff; border-bottom: 1px solid rgba(255,255,255,0.12); }
+        .next p { color: #cbd5e1; }
+        .cta { display: inline-flex; align-items: center; gap: 10px; margin-top: 16px; background: var(--green); color: #fff; text-decoration: none; font-weight: 700; font-size: 15px; padding: 13px 24px; border-radius: 50px; transition: opacity 0.2s ease; }
+        .cta:hover { opacity: 0.9; }
+        .cta svg { width: 18px; height: 18px; }
+        .foot { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+        .foot img { height: 16px; opacity: 0.7; vertical-align: middle; filter: brightness(0); }
+
+        /* responsive */
+        @media (max-width: 720px) {
+            .page { padding: 40px 22px 60px; }
+            .doc-head { flex-direction: column; align-items: flex-start; gap: 14px; }
+            .doc-meta { text-align: left; }
+            h1 { font-size: 30px; letter-spacing: -1px; }
+            .lede { font-size: 16px; }
+            .pillars, .sites, .kpi-chips, .pkgs, .plan { grid-template-columns: 1fr; }
+            .plan { grid-template-columns: 1fr 1fr; }
+            .vars { grid-template-columns: 1fr 1fr; }
+            .kpi-star, .guarantee { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .pkg.recommended, .pkg.combo { order: -1; }
+            .next { padding: 30px 24px; }
+        }
+        @media print {
+            body { background: #fff; }
+            .page { max-width: 100%; padding: 24px; }
+            .pillar, .site-card, .var, .chip, .step, .pkg, .sem-item { box-shadow: none; }
+            .cta { display: none; }
+            section { break-inside: avoid; }
+        }
+
+        .doc-head img.client { filter: brightness(0); height: 22px; }
+        .pkgs.two { grid-template-columns: 1fr 1fr; }
+        .pkg { text-align: left; padding: 30px 26px; }
+        .pkg-lines { margin-top: 18px; }
+        .pkg-line { display: flex; justify-content: space-between; gap: 12px; font-size: 13.5px; color: #4b5563; padding: 9px 0; border-top: 1px solid var(--line); }
+        .pkg-line b { color: var(--ink); white-space: nowrap; }
+        .math { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 6px; }
+        @media (max-width: 720px) { .pkgs.two, .math { grid-template-columns: 1fr; } }
+        .sites .site-feat { margin-top: 4px; }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <header class="doc-head">
+            <div style="display:flex;align-items:center;gap:16px;">
+                <img class="client" src="mada-logo.png" alt="Con Amor Mada">
+                <span style="color:#cbd5e1;font-weight:300;">&times;</span>
+                <img class="lareal" src="logo-la-real.png" alt="LA REAL">
+            </div>
+            <div class="doc-meta">Propuesta · Pauta digital<br>Octubre 2026</div>
+        </header>
+
+        <div class="eyebrow">Con Amor Mada · Pauta digital</div>
+        <h1>Dos formas de trabajar la pauta de Con Amor Mada</h1>
+        <p class="lede">Lo que hablamos en la llamada del 30 de septiembre, puesto por escrito: lo que vemos hoy en la marca, las dos modalidades en las que podemos acompañarlas y lo que cuesta cada una.</p>
+
+        <section>
+            <h2>Contexto</h2>
+            <p><span class="brand">Con Amor Mada</span> es una casa de diseño de hogar y moda, hecha a mano con comunidades artesanas, que lanzó a finales de agosto desde Barranquilla. En estos dos meses y medio las ventas han estado entre <strong>15 y 20 millones al mes</strong>, casi todas de familiares y amigos, y la vajilla representa cerca del <strong>60% de lo vendido</strong>, con un ticket promedio de alrededor de $1.500.000.</p>
+            <p>La tienda en Shopify ha recibido unas <strong>6.027 visitas</strong>; cerca de 40 llegaron al carrito y casi ninguna terminó la compra. La prueba de pauta de amor y amistad ($120.000 en cuatro días) tuvo unas 14.000 vistas, muchos guardados y comentarios, y un solo mensaje a WhatsApp. Como dijeron ustedes: hay admiración por la marca, pero todavía no se convierte en compra.</p>
+            <p class="note">Esto es normal en una marca que empieza. Hay tres cosas que hoy juegan en contra: <strong>es una marca nueva</strong> (la gente desconfía un poco al principio), <strong>el ticket es alto</strong> y <strong>la comunicación es muy conceptual</strong>, así que no siempre queda claro qué se vende, cuánto cuesta y cómo se compra. Con ese tráfico deberíamos ver por lo menos unas cinco compras.</p>
+        </section>
+
+        <section>
+            <h2>Lo que vemos para empezar</h2>
+            <div class="pillars">
+                <div class="pillar"><div class="pillar-n">01</div><div class="pillar-t">La historia artesanal al frente</div><p>Un plato de 300 horas, servilleteros hechos con los wayuu, individuales en palma de iraca. Eso es lo primero que alguien debería ver en la página y en los anuncios, idealmente con la persona que lo hace.</p></div>
+                <div class="pillar"><div class="pillar-n">02</div><div class="pillar-t">Una página lista para comprar</div><p>Envíos, tamaños, tiempos de producción y qué incluye cada producto, visibles y claros. Con mapas de calor vemos dónde se frena la gente: envío, precio o confianza.</p></div>
+                <div class="pillar"><div class="pillar-n">03</div><div class="pillar-t">Contenido más directo, sin perder el alma</div><p>Mantener el contenido curado de la marca y sumar contenido más cotidiano: personas reales usando los productos y formas de usarlos. No se trata de volverse genéricas, sino de ser más claras.</p></div>
+                <div class="pillar"><div class="pillar-n">04</div><div class="pillar-t">Productos de entrada</div><p>Collares, y en noviembre tazas y bowls, pueden ser la primera compra antes de la vajilla. Nos pasa con <span class="brand">Zorro y Jaguar</span>: el apagavelas es la puerta de entrada a la marca.</p></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Las dos opciones</h2>
+            <div class="sites">
+                <div class="site-card">
+                    <div class="site-tag">Opción 1</div>
+                    <div class="site-name">Gestión de pauta</div>
+                    <div class="site-desc">Nuestro equipo monta, administra y optimiza la pauta con el presupuesto que ustedes definan. Ustedes se enfocan en producir el contenido; nosotros les decimos <em>qué funciona y qué no</em> para pauta.</div>
+                    <ul class="site-feat">
+                        <li>Equipo senior: todos con más de cinco años de experiencia</li>
+                        <li>Estrategia, montaje y optimización de campañas en Meta</li>
+                        <li>Pruebas para encontrar qué contenido y qué público venden</li>
+                        <li>Mapas de calor y lectura de datos de la página</li>
+                        <li>Recomendaciones para la tienda (envíos, fichas, checkout)</li>
+                        <li>Feedback constante sobre el material que nos envíen</li>
+                        <li>Seguimiento de ventas vs. inversión en nuestro sistema propio</li>
+                    </ul>
+                </div>
+                <div class="site-card">
+                    <div class="site-tag">Opción 2</div>
+                    <div class="site-name">Acompañamiento</div>
+                    <div class="site-desc">Las asesoro directamente, pero la ejecución queda en sus manos. La idea es que en unos tres meses puedan <em>manejar la pauta sin depender de nosotros</em>, o decidir con información si quieren pasar a la gestión.</div>
+                    <ul class="site-feat">
+                        <li>Una sesión semanal con Juan Felipe (una hora a hora y media, sin afán)</li>
+                        <li>Revisión de números: qué está pasando y por qué</li>
+                        <li>Orientación para montar y leer la pauta; si hace falta, lo hacemos juntos en pantalla</li>
+                        <li>Recomendaciones de contenido y de la página</li>
+                        <li>Grupo de WhatsApp con Juan Felipe y una persona del equipo, para el día a día</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Lo que necesitamos de ustedes</h2>
+            <p>Lo que separa a las marcas a las que les va bien de las que no suele estar menos en la pauta y más en lo que pasa alrededor. Se lo decimos desde el principio:</p>
+            <ul class="inc">
+                <li><span><b>Contenido constante.</b> Es lo que más vamos a pedir. Curado y cotidiano, fotos y videos, making of, ustedes mismas usando los productos.</span></li>
+                <li><span><b>Dejarse orientar.</b> Damos mucho feedback y pedimos muchos cambios. Entre más rápido se hagan, más rápido se ven resultados.</span></li>
+                <li><span><b>Productos de línea.</b> Que la marca no dependa de si una colección gustó o no. La decisión de mantener la colección un año va en esa dirección.</span></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Plan de trabajo</h2>
+            <p>Sugerimos proyectar mínimo tres meses. Como todavía no hay datos de pauta, el primer mes es sobre todo para probar y escuchar lo que dicen los números.</p>
+            <div class="plan">
+                <div class="step first"><div class="step-m">Mes 1</div><div class="step-t">Conocer y probar</div><ul><li>Empalme con la marca y revisión de la tienda</li><li>Primeras pruebas de contenido y públicos</li><li>Mapas de calor y lectura del checkout</li></ul></div>
+                <div class="step"><div class="step-m">Mes 2</div><div class="step-t">Ajustar con datos</div><ul><li>Más presupuesto en lo que funciona</li><li>Ajustes a la página según lo que veamos</li><li>Lanzamiento de tazas y bowls, Black Friday</li></ul></div>
+                <div class="step"><div class="step-m">Mes 3</div><div class="step-t">Temporada y evaluación</div><ul><li>Diciembre: compra para regalo</li><li>Revisión de resultados vs. inversión</li><li>Decidir juntos cómo seguir</li></ul></div>
+            </div>
+            <div class="guarantee">
+                <span class="g-tag">Sin permanencia</span>
+                <p>No hay contrato. Si en el primer mes sienten que no nos entendimos, paramos y les <b>entregamos la cuenta sin problema</b>. Lo sugerido son tres meses porque antes de eso no hay datos suficientes para juzgar.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Experiencia</h2>
+            <p>Llevamos 11 años en esto. En LA REAL trabajamos mes a mes con <strong>+25 marcas en Latinoamérica</strong> y hemos trabajado con <strong>+200 marcas a nivel mundial</strong>, desde marcas que arrancan hasta marcas como <span class="brand">Leonisa</span>. En hogar, la que más conocemos es <span class="brand">Zorro y Jaguar</span>, con quienes llevamos un par de años. Con <span class="brand">Estruendo</span>, una marca muy cuidada con las palabras, pasamos por lo mismo que ustedes: encontrar cómo ser más comerciales sin dejar de ser ellas.</p>
+            <p>Hay meses muy buenos y meses que no lo son, y hay marcas con las que no lo logramos. Por eso preferimos ser claros con las expectativas desde el principio.</p>
+            <div class="mq">
+                <div class="mq-row"><div class="mq-track" id="mq1"></div></div>
+                <div class="mq-row reverse"><div class="mq-track" id="mq2"></div></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Inversión</h2>
+            <div class="pkgs two">
+                <div class="pkg">
+                    <div class="pkg-name">Gestión de pauta</div>
+                    <div class="pkg-sub">Ejecutamos nosotros</div>
+                    <div class="pkg-price">$2.500.000</div>
+                    <div class="pkg-unit">al mes · gestión de la agencia</div>
+                    <div class="pkg-lines">
+                        <div class="pkg-line"><span>Pauta mínima recomendada</span><b>$3.000.000 / mes</b></div>
+                        <div class="pkg-line"><span>La pauta se paga</span><b>Directo a Meta</b></div>
+                    </div>
+                    <div class="pkg-aud">Si pueden destinar $3.000.000 o más al mes a pauta.</div>
+                </div>
+                <div class="pkg">
+                    <div class="pkg-name">Acompañamiento</div>
+                    <div class="pkg-sub">Ejecutan ustedes, con guía</div>
+                    <div class="pkg-price">$1.500.000</div>
+                    <div class="pkg-unit">al mes</div>
+                    <div class="pkg-lines">
+                        <div class="pkg-line"><span>Sesiones</span><b>1 por semana</b></div>
+                        <div class="pkg-line"><span>Presupuesto de pauta</span><b>Lo definen ustedes</b></div>
+                    </div>
+                    <div class="pkg-aud">Si prefieren arrancar con menos presupuesto o aprender a manejarla ustedes.</div>
+                </div>
+            </div>
+            <p class="note">Precios <strong>+IVA</strong>, pago mensual. Mes a mes, sin permanencia.</p>
+
+            <div class="sublabel">Por qué recomendamos mínimo $3.000.000 en pauta</div>
+            <p>En pauta medimos el resultado por retorno: cuánto se vende por cada peso invertido. Un retorno de 5 es bueno para una marca que arranca en Colombia. Con menos de $3.000.000 al mes, lo que se vende no alcanza para cubrir la agencia, Shopify y la pasarela de pagos, y terminamos siendo muy costosos para lo que podemos devolver. En ese caso recomendamos el acompañamiento.</p>
+            <div class="math">
+                <div class="chip"><b>$1.000.000 en pauta</b><span>Con retorno de 5: unos $5.000.000 en ventas.</span></div>
+                <div class="chip"><b>$3.000.000 en pauta</b><span>Con retorno de 5: unos $15.000.000 en ventas.</span></div>
+                <div class="chip"><b>Referencia, no promesa</b><span>El retorno real depende del producto, el contenido y la página.</span></div>
+            </div>
+        </section>
+
+        <div class="next">
+            <h2>Siguiente paso</h2>
+            <p>Sabemos que están revisando otras propuestas. Si tienen preguntas sobre cualquiera de las dos opciones, o quieren que nos sentemos otra vez, escríbanme. Y si no llegamos a trabajar juntos, el número queda igual para cualquier duda.</p>
+            <a class="cta" href="https://wa.me/573043148428?text=Hola%20Juanfe%2C%20revisamos%20la%20propuesta%20de%20Con%20Amor%20Mada" target="_blank">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                Hablemos por WhatsApp
+            </a>
+        </div>
+
+        <div class="foot">
+            <span>Preparado por <img src="logo-la-real.png" alt="LA REAL"> LA REAL — Agencia digital</span>
+            <span>juanfe@larealmarketing.com</span>
+        </div>
+
+    </div>
+
+    <script>
+        const BRANDS = ['Cacao Hunters','Dulcey','Kryolan','Panavayu','Barba Roja','Leonisa','Once','Pachha','Zorro y Jaguar','Estruendo','Ukelele','Sandra Botero','Cíclico','IFW','Adriza','Atratus','Gratu','Natnack'];
+        function brandsHTML(list){ const i=list.map(b=>`<span class="mq-item"><span class="word">${b}</span><span class="ast">✱</span></span>`).join(''); return i+i; }
+        const half=Math.floor(BRANDS.length/2), rotated=[...BRANDS.slice(half),...BRANDS.slice(0,half)];
+        document.getElementById('mq1').innerHTML=brandsHTML(BRANDS);
+        document.getElementById('mq2').innerHTML=brandsHTML(rotated);
+    </script>
+</body>
+</html>
